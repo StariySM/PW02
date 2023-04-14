@@ -1,7 +1,50 @@
 from AddressBook import *
+from abc import ABC, abstractmethod
 
 
-class Bot:
+class UserInterface(ABC):
+    @abstractmethod
+    def add(self):
+        pass
+
+    @abstractmethod
+    def search(self):
+        pass
+
+    @abstractmethod
+    def edit(self):
+        pass
+
+    @abstractmethod
+    def remove(self):
+        pass
+
+    @abstractmethod
+    def save(self):
+        pass
+
+    @abstractmethod
+    def load(self):
+        pass
+
+    @abstractmethod
+    def congratulate(self):
+        pass
+
+    @abstractmethod
+    def view(self):
+        pass
+
+    @abstractmethod
+    def exit(self):
+        pass
+
+    @abstractmethod
+    def help(self):
+        pass
+
+
+class Bot(UserInterface):
 
     def __init__(self):
         self.book = AddressBook()
